@@ -1,27 +1,25 @@
-.search-bar {
-  font-size: 20px;
-  margin-left: 20px;
-  border-radius: 2px;
-}
-
-.header {
-  width: 100%;
-  height: 80px;
-  background-color: #121216;
-  display: block;
-}
-
 body {
   background-color: #101014;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+  width: 100%; /* Ensure the header takes full width */
+  height: 80px;
+  background-color: #121216;
+  display: block;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .logo_container {
   height: 100%;
   display: table;
   float: left;
-  margin-left: 218px;
+  margin-left: 20px;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .logo_container h1 {
@@ -34,88 +32,125 @@ body {
   font-weight: 800;
 }
 
-.logo_container h1 span {
-  color: #000000;
+.logo_container h2 {
+  color: #1985a1;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: "Roboto";
+  font-size: 32px;
   font-weight: 800;
-  margin-left: 10px;
-  background: #efb702;
-  border: none;
-  width: 60px;
-  border-radius: 2px;
+  margin-left: 100px;
 }
 
 .navigation {
-  float: right;
+  display: flex;
+  align-items: center; /* Vertically center the entire navigation */
   height: 100%;
-  margin-top: 2px;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li {
+  margin-left: 20px;
 }
 
 .navigation a {
-  height: 100%;
-  display: table;
-  float: left;
-  padding: 0xp 20px;
-  margin-right: 218px;
-}
-
-.navigation a li {
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
   color: white;
   font-family: "Roboto";
   font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Vertically center the text within the link */
+  height: 100%;
   cursor: pointer;
-  font-weight: 400;
+  margin-bottom: 30px;
 }
 
-.navigation a li:hover {
-  color: #efb702;
+.navigation a:hover {
+  color: #1985a1;
 }
 
 .video_preview {
   width: 300px;
   display: block;
-}
-
-.title {
-  color: white;
+  color: #ffffff;
   font-family: "Roboto";
-  font-weight: 600;
-  margin-left: 25px;
+  font-weight: 400;
 }
 
-.thumbnail1 {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 25px;
-  vertical-align: middle;
+.thumbnail-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow thumbnails to wrap */
+  justify-content: flex-start; /* Align to the start */
+  margin-top: 20px; /* Space above the thumbnails */
+  gap: 15px; /* Space between thumbnails */
+  padding: 0 10px; /* Padding to prevent overflow */
 }
 
-.thumbnail2 {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 25px;
-  vertical-align: middle;
+.thumbnail {
+  flex: 1 1 0; /* Allow thumbnails to grow and fill space */
+  max-width: 300px; /* Restrict maximum width */
+  height: auto; /* Maintain aspect ratio */
+  box-sizing: border-box; /* Include padding and border in width calculations */
 }
 
-.thumbnail4 {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 25px;
-  vertical-align: middle;
+.thumbnail img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for thumbnails */
 }
 
-.thumbnail5 {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 25px;
-  vertical-align: middle;
+.thumbnail-title {
+  font-size: 16px; /* Increase font size for titles on mobile */
+  font-family: "Roboto";
+  font-weight: 400; /* Use correct font-weight */
+  color: rgb(255, 255, 255);
 }
 
-.thumbnail6 {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 25px;
-  vertical-align: middle;
+@media screen and (max-width: 600px) {
+  .inner_header {
+    width: 100%; /* Full width for mobile */
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  .logo_container h1 {
+    font-size: 20px; /* Adjusts font size for mobile */
+    line-height: 30px; /* Adjusts line height for better spacing */
+  }
+
+  .logo_container h2 {
+    font-size: 20px; /* Adjusts font size for mobile */
+    line-height: 30px; /* Adjusts line height for better spacing */
+  }
+
+  .navigation li {
+    margin-left: 2%;
+    padding: 2px; /* Reduce margin for smaller screens */
+  }
+
+  .navigation {
+    float: left; /* Floats navigation to the left on mobile */
+    height: 90%; /* Sets height for navigation */
+  }
+
+  .thumbnail {
+    flex: 1 1 0; /* Allow thumbnails to grow */
+    max-width: 90%; /* Allow full width on mobile */
+    margin-bottom: 10px; /* Add margin for separation */
+  }
+
+  .thumbnail-title {
+    font-size: 12px; /* Increase font size for titles on mobile */
+    margin-left: 5px; /* Space around titles */
+    color: white;
+    font-family: "Roboto";
+    font-weight: 300;
+  }
 }
